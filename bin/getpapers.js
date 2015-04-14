@@ -3,18 +3,22 @@ var program = require('commander')
 , fs = require('fs')
 , winston = require('winston')
 , EuPmc = require('../lib/eupmc.js')
-, loglevels = require('../lib/loglevels.js');
+, loglevels = require('../lib/loglevels.js')
+, mkdirp = require('mkdirp');
 
 var pjson = require('../package.json');
 
 program
 .version(pjson.version)
 .option('-q, --query <query>',
-'Search query')
+        'Search query (required)')
+.option('-o, --outdir <path>',
+        'Output directory (required - will be created if ' +
+        'not found)')
 .option('-l, --loglevel <level>',
-'amount of information to log ' +
-'(silent, verbose, info*, data, warn, error, or debug)',
-'info')
+        'amount of information to log ' +
+        '(silent, verbose, info*, data, warn, error, or debug)',
+        'info')
 .parse(process.argv);
 
 if (!process.argv.slice(2).length) {
@@ -22,6 +26,7 @@ if (!process.argv.slice(2).length) {
 }
 
 // set up logging
+
 var allowedlevels = Object.keys(loglevels.levels);
 if (allowedlevels.indexOf(program.loglevel) == -1) {
   winston.error('Loglevel must be one of: ',
@@ -41,5 +46,23 @@ log = new (winston.Logger)({
 });
 winston.addColors(loglevels.colors);
 
+// check arguments
+
+if (!program.query) {
+  log.error('No query given. ' +
+            'You must provide the --query argument.');
+  process.exit(1);
+}
+
+if (!program.outdir) {
+  log.error('No output directory given. ' +
+            'You must provide the --outdir argument.');
+  process.exit(1);
+}
+
+// run
+
+mkdirp.sync(program.outdir);
+process.chdir(program.outdir);
 var eupmc = new EuPmc();
 eupmc.search(program.query);
