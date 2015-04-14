@@ -2,7 +2,7 @@
 var program = require('commander')
 , fs = require('fs')
 , winston = require('winston')
-, eupmc = require('../lib/eupmc.js')
+, EuPmc = require('../lib/eupmc.js')
 , loglevels = require('../lib/loglevels.js');
 
 var pjson = require('../package.json');
@@ -41,4 +41,5 @@ log = new (winston.Logger)({
 });
 winston.addColors(loglevels.colors);
 
+var eupmc = new EuPmc();
 eupmc.search(program.query);
