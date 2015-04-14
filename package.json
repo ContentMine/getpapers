@@ -21,7 +21,6 @@
       "url": "https://github.com/ContentMine/getpapers/blob/master/LICENSE"
     }
   ],
-  "main": "lib/getpapers",
   "engines": {
     "node": ">= 0.8.14"
   },
@@ -39,7 +38,7 @@
     "winston": "~1.0.0"
   },
   "bin": {
-    "quickscrape": "bin/getpapers.js"
+    "getpapers": "bin/getpapers.js"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
