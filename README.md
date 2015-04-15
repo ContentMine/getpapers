@@ -59,6 +59,8 @@ Note that in this case, we combine two restrictions using the logical `OR` keywo
 --query '(LICENSE:"cc by" OR LICENSE:"cc-by") AND METHODS:"transcriptome assembly"'
 ```
 
+A selection of the most commonly useful search fields are explained below...
+
 ### Restrict search by bibliographic metadata
 
 | Field     | Description                                                                                       | Example                                                                                            |
