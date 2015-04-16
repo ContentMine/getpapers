@@ -15,6 +15,8 @@ program
 .option('-o, --outdir <path>',
         'Output directory (required - will be created if ' +
         'not found)')
+.option('-x, --xml',
+        'Download fulltext XMLs if available')
 .option('-l, --loglevel <level>',
         'amount of information to log ' +
         '(silent, verbose, info*, data, warn, error, or debug)',
@@ -62,7 +64,10 @@ if (!program.outdir) {
 
 // run
 
+var options = {}
+options.xml = program.xml
+
 mkdirp.sync(program.outdir);
 process.chdir(program.outdir);
-var eupmc = new EuPmc();
+var eupmc = new EuPmc(options);
 eupmc.search(program.query);
