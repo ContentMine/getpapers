@@ -91,3 +91,9 @@ A selection of the most commonly useful search fields are explained below...
 | `METHODS:` | Find articles with a phrase in the Materials & Methods section       |  `METHODS:“yeast two-hybrid”`  |
 | `RESULTS:` | Find articles with a phrase in the Results section                   | `RESULTS:"in vivo"`            |
 | `DISCUSS:` | Find articles with a phrase in the Discussion seciton                | `DISCUSS:cardivascular`        |
+
+
+## License
+
+Copyright (c) 2014 Shuttleworth Foundation
+Licensed under the MIT license
