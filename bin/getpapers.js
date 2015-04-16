@@ -17,6 +17,8 @@ program
         'not found)')
 .option('-x, --xml',
         'Download fulltext XMLs if available')
+.option('-p, --pdf',
+        'Download fulltext PDFs if available')
 .option('-l, --loglevel <level>',
         'amount of information to log ' +
         '(silent, verbose, info*, data, warn, error, or debug)',
@@ -66,6 +68,7 @@ if (!program.outdir) {
 
 var options = {}
 options.xml = program.xml
+options.pdf = program.pdf
 
 mkdirp.sync(program.outdir);
 process.chdir(program.outdir);
