@@ -19,6 +19,8 @@ program
         'Download fulltext XMLs if available')
 .option('-p, --pdf',
         'Download fulltext PDFs if available')
+.option('-s, --supp',
+        'Download supplementary files if available')
 .option('-l, --loglevel <level>',
         'amount of information to log ' +
         '(silent, verbose, info*, data, warn, error, or debug)',
@@ -67,8 +69,9 @@ if (!program.outdir) {
 // run
 
 var options = {}
-options.xml = program.xml
-options.pdf = program.pdf
+options.xml = program.xml;
+options.pdf = program.pdf;
+options.supp = program.supp;
 
 mkdirp.sync(program.outdir);
 process.chdir(program.outdir);
