@@ -1,7 +1,7 @@
 # getpapers
 Get fulltexts or fulltext URLs of papers matching a search query using the EuropePMC API.
 
-getpapers is designed for use in content mining, but you may find it useful for quickly acquiring large numbers of papers for reading.
+getpapers can fetch article metadata, fulltexts (PDF or XML), and supplementary materials. It's designed for use in content mining, but you may find it useful for quickly acquiring large numbers of papers for reading. 
 
 ## Installation
 
@@ -23,6 +23,9 @@ Options:
   -V, --version           output the version number
   -q, --query <query>     Search query (required)
   -o, --outdir <path>     Output directory (required - will be created if not found)
+  -x, --xml               Download fulltext XMLs if available
+  -p, --pdf               Download fulltext PDFs if available
+  -s, --supp              Download supplementary files if available
   -l, --loglevel <level>  amount of information to log (silent, verbose, info*, data, warn, error, or debug)
 
 ```
