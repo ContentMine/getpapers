@@ -25,6 +25,8 @@ program
         'amount of information to log ' +
         '(silent, verbose, info*, data, warn, error, or debug)',
         'info')
+.option('-a, --all',
+        'search all papers, not just open access')
 .parse(process.argv);
 
 if (!process.argv.slice(2).length) {
@@ -72,6 +74,7 @@ var options = {}
 options.xml = program.xml;
 options.pdf = program.pdf;
 options.supp = program.supp;
+options.all = program.all;
 
 mkdirp.sync(program.outdir);
 process.chdir(program.outdir);
