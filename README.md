@@ -1,7 +1,7 @@
 # getpapers
-Get fulltexts or fulltext URLs of papers matching a search query using the EuropePMC API.
+Get fulltexts or fulltext URLs of papers matching a search query using either the EuropePMC or the IEEE API.
 
-getpapers can fetch article metadata, fulltexts (PDF or XML), and supplementary materials. It's designed for use in content mining, but you may find it useful for quickly acquiring large numbers of papers for reading. 
+getpapers can fetch article metadata, fulltexts (PDF or XML), and supplementary materials. It's designed for use in content mining, but you may find it useful for quickly acquiring large numbers of papers for reading, or for bibliometrics.
 
 ## Installation
 
@@ -23,18 +23,22 @@ Options:
   -V, --version           output the version number
   -q, --query <query>     Search query (required)
   -o, --outdir <path>     Output directory (required - will be created if not found)
+  --api <name>            API to search [eupmc, ieee] (default: eupmc)
   -x, --xml               Download fulltext XMLs if available
   -p, --pdf               Download fulltext PDFs if available
   -s, --supp              Download supplementary files if available
   -l, --loglevel <level>  amount of information to log (silent, verbose, info*, data, warn, error, or debug)
+  -a, --all               search all papers, not just open access
 
 ```
+
+By default, getpapers uses the EuropePMC API.
 
 ## Screenshot
 
 ![screenshot](https://raw.githubusercontent.com/ContentMine/getpapers/master/docs/screenshot.png)
 
-## Query format
+## EuropePMC Query format
 
 Queries are processed by EuropePMC. In their simplest form, they can be free text, like this:
 
@@ -95,6 +99,13 @@ A selection of the most commonly useful search fields are explained below...
 | `RESULTS:` | Find articles with a phrase in the Results section                   | `RESULTS:"in vivo"`            |
 | `DISCUSS:` | Find articles with a phrase in the Discussion seciton                | `DISCUSS:cardivascular`        |
 
+## IEEE Query format
+
+The IEEE query format is loosely documented at [IEEE Xplore Gateway](http://ieeexplore.ieee.org/gateway/). In general, anything that works in the website search will also work in `getpapers` with the `--api ieee` option enabled.
+
+Note that IEEE does not provide fulltext XML, and their fulltext PDFs are not easily downloadable (though we're working on it). `getpapers` will output metadata for the search results, and will attempt to reconstruct the fulltext HTML URLs for any papers that have fulltext HTML.
+
+If you want to actually download the fulltext HTML of papers, [you will need this hack-around script](https://gist.github.com/Blahah/95bf793b3c9ddba2d4b6). In the future we will incorporate fulltext download into getpapers.
 
 ## License
 
