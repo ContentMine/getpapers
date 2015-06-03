@@ -2,7 +2,7 @@
 var program = require('commander')
 , fs = require('fs')
 , winston = require('winston')
-, EuPmc = require('../lib/eupmc.js')
+, api = require('../lib/api.js')
 , loglevels = require('../lib/loglevels.js')
 , mkdirp = require('mkdirp');
 
@@ -15,6 +15,8 @@ program
 .option('-o, --outdir <path>',
         'Output directory (required - will be created if ' +
         'not found)')
+.option('--api <name>',
+        'API to search [eupmc] (default: eupmc)')
 .option('-x, --xml',
         'Download fulltext XMLs if available')
 .option('-p, --pdf',
@@ -31,6 +33,10 @@ program
 
 if (!process.argv.slice(2).length) {
   program.help();
+}
+
+if (!program.api) {
+  program.api = 'eupmc';
 }
 
 // set up logging
@@ -68,6 +74,8 @@ if (!program.outdir) {
   process.exit(1);
 }
 
+console.log('api is ' + program.api);
+
 // run
 
 var options = {}
@@ -78,5 +86,6 @@ options.all = program.all;
 
 mkdirp.sync(program.outdir);
 process.chdir(program.outdir);
-var eupmc = new EuPmc(options);
-eupmc.search(program.query);
+var chosenapi = api(program.api);
+var searchapi = new chosenapi(options);
+searchapi.search(program.query);
