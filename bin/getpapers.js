@@ -74,7 +74,7 @@ if (!program.outdir) {
   process.exit(1);
 }
 
-console.log('api is ' + program.api);
+log.info('Searching using ' + program.api + ' API');
 
 // run
 
