@@ -1,4 +1,8 @@
-# getpapers
+# getpapers [![NPM version](https://img.shields.io/npm/v/getpapers.svg)][npm] [![license MIT](https://img.shields.io/github/license/contentmine/getpapers.svg)][license] [![Downloads](http://img.shields.io/npm/dm/getpapers.svg)][downloads]
+
+[npm]: https://www.npmjs.com/package/getpapers
+[license]: https://github.com/ContentMine/getpapers/blob/master/LICENSE
+[downloads]: https://nodei.co/npm/getpapers
 Get fulltexts or fulltext URLs of papers matching a search query using any of the following APIs:
 
  - EuropePMC
