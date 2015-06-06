@@ -1,5 +1,9 @@
 # getpapers
-Get fulltexts or fulltext URLs of papers matching a search query using either the EuropePMC or the IEEE API.
+Get fulltexts or fulltext URLs of papers matching a search query using any of the following APIs:
+
+ - EuropePMC
+ - IEEE
+ - ArXiv
 
 getpapers can fetch article metadata, fulltexts (PDF or XML), and supplementary materials. It's designed for use in content mining, but you may find it useful for quickly acquiring large numbers of papers for reading, or for bibliometrics.
 
@@ -99,13 +103,111 @@ A selection of the most commonly useful search fields are explained below...
 | `RESULTS:` | Find articles with a phrase in the Results section                   | `RESULTS:"in vivo"`            |
 | `DISCUSS:` | Find articles with a phrase in the Discussion seciton                | `DISCUSS:cardivascular`        |
 
-## IEEE Query format
+## IEEE query format
 
 The IEEE query format is loosely documented at [IEEE Xplore Gateway](http://ieeexplore.ieee.org/gateway/). In general, anything that works in the website search will also work in `getpapers` with the `--api ieee` option enabled.
 
 Note that IEEE does not provide fulltext XML, and their fulltext PDFs are not easily downloadable (though we're working on it). `getpapers` will output metadata for the search results, and will attempt to reconstruct the fulltext HTML URLs for any papers that have fulltext HTML.
 
 If you want to actually download the fulltext HTML of papers, [you will need this hack-around script](https://gist.github.com/Blahah/95bf793b3c9ddba2d4b6). In the future we will incorporate fulltext download into getpapers.
+
+## ArXiv query format
+
+ArXiv has a nice, clearly defined format. Queries can target individual fields of the articles records, as follows:
+
+<table>
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    <strong>prefix</strong>
+    </td>
+    <td align="left">
+    <strong>explanation</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    ti
+    </td>
+    <td align="left">
+    Title
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    au
+    </td>
+    <td align="left">
+    Author
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    abs
+    </td>
+    <td align="left">
+    Abstract
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    co
+    </td>
+    <td align="left">
+    Comment
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    jr
+    </td>
+    <td align="left">
+    Journal Reference
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    cat
+    </td>
+    <td align="left">
+    Subject Category
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    rn
+    </td>
+    <td align="left">
+    Report Number
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    id
+    </td>
+    <td align="left">
+    Id (use <tt>id_list</tt> instead)
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    all
+    </td>
+    <td align="left">
+    All of the above
+    </td>
+  </tr>
+</tbody>
+</table>
+
+These fields can be searched individually or combined with logical operators.
+
+For example:
+
+```
+--query 'all:transcriptome'
+--query 'au:"del maestro" AND ti:checkerboard'
+```
 
 ## License
 
