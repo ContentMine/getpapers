@@ -31,7 +31,7 @@ Options:
   -V, --version           output the version number
   -q, --query <query>     Search query (required)
   -o, --outdir <path>     Output directory (required - will be created if not found)
-  --api <name>            API to search [eupmc, ieee] (default: eupmc)
+  --api <name>            API to search [arxiv, eupmc, ieee] (default: eupmc)
   -x, --xml               Download fulltext XMLs if available
   -p, --pdf               Download fulltext PDFs if available
   -s, --supp              Download supplementary files if available
