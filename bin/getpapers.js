@@ -32,6 +32,8 @@ program
 .option('-n, --noexecute',
         'report how many results match the query, but don\'t actually ' +
         'download anything)')
+.option('-o, --logfile <filename>',
+        'save log to specified file in output directory as well as printing to terminal')
 .parse(process.argv);
 
 if (!process.argv.slice(2).length) {
@@ -62,6 +64,14 @@ log = new (winston.Logger)({
   colorize: true
 });
 winston.addColors(loglevels.colors);
+
+if (program.hasOwnProperty('logfile')) {
+  log.add(winston.transports.File, {
+    filename: program.logfile,
+    level: 'debug'
+  });
+  log.info('Saving logs to ./' + program.outdir + '/' + program.logfile);
+}
 
 // check arguments
 
