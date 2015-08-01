@@ -29,6 +29,9 @@ program
         'info')
 .option('-a, --all',
         'search all papers, not just open access')
+.option('-n, --noexecute',
+        'report how many results match the query, but don\'t actually ' +
+        'download anything)')
 .parse(process.argv);
 
 if (!process.argv.slice(2).length) {
@@ -83,6 +86,10 @@ options.xml = program.xml;
 options.pdf = program.pdf;
 options.supp = program.supp;
 options.all = program.all;
+options.noexecute = program.noexecute;
+if (options.noexecute) {
+  log.info('Running in no-execute mode, so nothing will be downloaded');
+}
 
 mkdirp.sync(program.outdir);
 process.chdir(program.outdir);
