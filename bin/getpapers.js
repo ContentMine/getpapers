@@ -32,7 +32,7 @@ program
 .option('-n, --noexecute',
         'report how many results match the query, but don\'t actually ' +
         'download anything)')
-.option('-o, --logfile <filename>',
+.option('-f, --logfile <filename>',
         'save log to specified file in output directory as well as printing to terminal')
 .parse(process.argv);
 
