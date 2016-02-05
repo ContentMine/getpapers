@@ -29,6 +29,11 @@ program
         'info')
 .option('-a, --all',
         'search all papers, not just open access')
+.option('-n, --noexecute',
+        'report how many results match the query, but don\'t actually ' +
+        'download anything)')
+.option('-f, --logfile <filename>',
+        'save log to specified file in output directory as well as printing to terminal')
 .parse(process.argv);
 
 if (!process.argv.slice(2).length) {
@@ -60,6 +65,14 @@ log = new (winston.Logger)({
 });
 winston.addColors(loglevels.colors);
 
+if (program.hasOwnProperty('logfile')) {
+  log.add(winston.transports.File, {
+    filename: program.logfile,
+    level: 'debug'
+  });
+  log.info('Saving logs to ./' + program.outdir + '/' + program.logfile);
+}
+
 // check arguments
 
 if (!program.query) {
@@ -83,6 +96,10 @@ options.xml = program.xml;
 options.pdf = program.pdf;
 options.supp = program.supp;
 options.all = program.all;
+options.noexecute = program.noexecute;
+if (options.noexecute) {
+  log.info('Running in no-execute mode, so nothing will be downloaded');
+}
 
 mkdirp.sync(program.outdir);
 process.chdir(program.outdir);
