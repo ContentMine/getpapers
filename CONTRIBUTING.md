@@ -12,8 +12,6 @@ This is a set of guidelines for contributing to getpapers. You don't need to fol
 
 [Local testing](#local-testing)
 
-[Not sure how to get started?](#not-sure-how-to-get-started?)
-
 ## Basics
 
 getpapers is based on Node.js. If you want an introduction on how to work on a project like this, you can find a comprehensive tutorial [here](http://www.nodebeginner.org/).
