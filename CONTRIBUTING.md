@@ -1,6 +1,6 @@
 # Contributing to getpapers
 
-:+1: Thank you for taking the time to contribute!
+Thank you for taking the time to contribute! :+1: 
 
 This is a set of guidelines for contributing to getpapers. You don't need to follow them as strict rules, use your best judgement and feel free to propose changes to this document as well via a pull request.
 
@@ -8,21 +8,15 @@ This is a set of guidelines for contributing to getpapers. You don't need to fol
 
 [Basics](#basics)
 
-[Code style](#code-style)
-
-[How can I contribute?](#how-can-i-contribute?)
+[How can I contribute?](#how-can-i-contribute)
 
 [Local testing](#local-testing)
 
 [Not sure how to get started?](#not-sure-how-to-get-started?)
 
-
 ## Basics
 
 getpapers is based on Node.js. If you want an introduction on how to work on a project like this, you can find a comprehensive tutorial [here](http://www.nodebeginner.org/).
- 
-## Code style
-
 
 ## How can I contribute?
 
@@ -34,6 +28,7 @@ If you encounter a bug, please let us know. You can raise a new issue [here](htt
 * Describe the exact steps which reproduce the problem, e.g. the query you entered.
 * Describe the behaviour following those steps, and where the problem occurred.
 * Explain where it was different from what you expected to happen.
+* Attach additional information to the report, such as error messages, or corrupted files.
 * Add a `bug` label to the issue.
 
 Before submitting a bug, please check the [list of existing bugs](https://github.com/ContentMine/getpapers/issues?q=is%3Aissue+is%3Aopen+label%3Abug) whether there is a similar issue open. You can then help by adding your information to an existing report.
@@ -46,7 +41,7 @@ If you're not sure where to start, have a look at issues that have a `help wante
 
 There is always room for improvement and we'd like to hear your perspective on it.
 
-Before creating a pull request, please raise an issue to discuss the proposed changes first. 
+Before creating a pull request, please raise an issue to discuss the proposed changes first. We can then make sure to make best use of your efforts.
 
 ## Local testing
 
@@ -60,6 +55,6 @@ In order to set up your development environment for getpapers, you need to insta
 
 1. Test your changes by running `npm install` within the repository and running gepapers with `npm bin/getpapers.js`.
 
-1. When everyhing works and you think your changes are ready, push them to your repository and [create a pull request](https://www.atlassian.com/git/tutorials/making-a-pull-request).
+1. When your changes work as intended, push them to your repository and [create a pull request](https://www.atlassian.com/git/tutorials/making-a-pull-request).
 
 1. We will then review the pull request and merge it as soon as possible. If problems arise, they will be discussed within the pull request.
