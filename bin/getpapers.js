@@ -34,6 +34,8 @@ program
         'download anything)')
 .option('-f, --logfile <filename>',
         'save log to specified file in output directory as well as printing to terminal')
+.option('-k, --limit <int>',
+	'limit the number of hits and downloads')
 .parse(process.argv);
 
 if (!process.argv.slice(2).length) {
@@ -96,6 +98,7 @@ options.xml = program.xml;
 options.pdf = program.pdf;
 options.supp = program.supp;
 options.all = program.all;
+options.hitlimit = parseInt(program.limit);
 options.noexecute = program.noexecute;
 if (options.noexecute) {
   log.info('Running in no-execute mode, so nothing will be downloaded');
