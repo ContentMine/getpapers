@@ -11,18 +11,18 @@ var pjson = require('../package.json');
 program
 .version(pjson.version)
 .option('-q, --query <query>',
-        'Search query (required)')
+        'search query (required)')
 .option('-o, --outdir <path>',
-        'Output directory (required - will be created if ' +
+        'output directory (required - will be created if ' +
         'not found)')
 .option('--api <name>',
         'API to search [eupmc, ieee, arxiv] (default: eupmc)')
 .option('-x, --xml',
-        'Download fulltext XMLs if available')
+        'download fulltext XMLs if available')
 .option('-p, --pdf',
-        'Download fulltext PDFs if available')
+        'download fulltext PDFs if available')
 .option('-s, --supp',
-        'Download supplementary files if available')
+        'download supplementary files if available')
 .option('-l, --loglevel <level>',
         'amount of information to log ' +
         '(silent, verbose, info*, data, warn, error, or debug)',
@@ -31,7 +31,7 @@ program
         'search all papers, not just open access')
 .option('-n, --noexecute',
         'report how many results match the query, but don\'t actually ' +
-        'download anything)')
+        'download anything')
 .option('-f, --logfile <filename>',
         'save log to specified file in output directory as well as printing to terminal')
 .option('-k, --limit <int>',
