@@ -67,12 +67,15 @@ log = new (winston.Logger)({
 });
 winston.addColors(loglevels.colors);
 
+
+
 if (program.hasOwnProperty('logfile')) {
+  logstream = fs.createWriteStream(program.logfile.toString());
   log.add(winston.transports.File, {
-    filename: program.logfile,
+    stream: logstream,
     level: 'debug'
   });
-  log.info('Saving logs to ./' + program.outdir + '/' + program.logfile);
+  log.info('Saving logs to ./' + program.logfile);
 }
 
 // check arguments
@@ -80,12 +83,6 @@ if (program.hasOwnProperty('logfile')) {
 if (!program.query) {
   log.error('No query given. ' +
             'You must provide the --query argument.');
-  process.exit(1);
-}
-
-if (!program.outdir) {
-  log.error('No output directory given. ' +
-            'You must provide the --outdir argument.');
   process.exit(1);
 }
 
@@ -103,9 +100,16 @@ options.noexecute = program.noexecute;
 if (options.noexecute) {
   log.info('Running in no-execute mode, so nothing will be downloaded');
 }
+else {
+  if (!program.outdir) {
+    log.error('No output directory given. ' +
+        'You must provide the --outdir argument.');
+    process.exit(1);
+  }
+  mkdirp.sync(program.outdir);
+  process.chdir(program.outdir);
+}
 
-mkdirp.sync(program.outdir);
-process.chdir(program.outdir);
 var chosenapi = api(program.api);
 var searchapi = new chosenapi(options);
 searchapi.search(program.query);
