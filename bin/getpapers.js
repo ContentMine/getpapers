@@ -23,6 +23,8 @@ program
         'download fulltext PDFs if available')
 .option('-s, --supp',
         'download supplementary files if available')
+.option('-t, --minedterms',
+        'download text-mined terms if available')
 .option('-l, --loglevel <level>',
         'amount of information to log ' +
         '(silent, verbose, info*, data, warn, error, or debug)',
@@ -94,6 +96,7 @@ var options = {}
 options.xml = program.xml;
 options.pdf = program.pdf;
 options.supp = program.supp;
+options.minedterms = program.minedterms;
 options.all = program.all;
 options.hitlimit = parseInt(program.limit);
 options.noexecute = program.noexecute;
