@@ -3,7 +3,7 @@
 [npm]: https://www.npmjs.com/package/getpapers
 [license]: https://github.com/ContentMine/getpapers/blob/master/LICENSE
 [downloads]: https://nodei.co/npm/getpapers
-Get fulltexts or fulltext URLs of papers matching a search query using any of the following APIs:
+Get metadata, fulltexts or fulltext URLs of papers matching a search query using any of the following APIs:
 
  - EuropePMC
  - IEEE
