@@ -1,7 +1,7 @@
 {
   "name": "getpapers",
   "description": "Get fulltexts or fulltext URLs of papers matching a search query",
-  "version": "0.4.1",
+  "version": "0.4.5",
   "homepage": "https://github.com/ContentMine/getpapers",
   "author": {
     "name": "Richard Smith-Unna",
@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/ContentMine/getpapers/issues"
   },
+  "license": "MIT",
   "licenses": [
     {
       "type": "MIT",
@@ -35,6 +36,7 @@
     "crossref": "^0.1.2",
     "got": "^2.7.2",
     "lodash": "^3.6.0",
+    "matched": "^0.4.1",
     "mkdirp": "^0.5.0",
     "progress": "^1.1.8",
     "restler": "^3.2.2",
