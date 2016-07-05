@@ -1,7 +1,7 @@
 {
   "name": "getpapers",
   "description": "Get fulltexts or fulltext URLs of papers matching a search query",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "homepage": "https://github.com/ContentMine/getpapers",
   "author": {
     "name": "Richard Smith-Unna",
