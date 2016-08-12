@@ -8,6 +8,7 @@ Get metadata, fulltexts or fulltext URLs of papers matching a search query using
  - EuropePMC
  - IEEE
  - ArXiv
+ - Crossref (metadata, no fulltext)
 
 getpapers can fetch article metadata, fulltexts (PDF or XML), and supplementary materials. It's designed for use in content mining, but you may find it useful for quickly acquiring large numbers of papers for reading, or for bibliometrics.
 
@@ -53,6 +54,7 @@ Each API has its own query format. Usage guides are provided on our wiki:
 - [EuropePMC query format](https://github.com/ContentMine/getpapers/wiki/europepmc-query-format)
 - [IEEE query format](https://github.com/ContentMine/getpapers/wiki/ieee-query-format)
 - [ArXiv query format](https://github.com/ContentMine/getpapers/wiki/arxiv-query-format)
+- [Crossref API](https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md)
 
 ## License
 
