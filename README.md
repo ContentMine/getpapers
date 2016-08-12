@@ -54,7 +54,7 @@ Each API has its own query format. Usage guides are provided on our wiki:
 - [EuropePMC query format](https://github.com/ContentMine/getpapers/wiki/europepmc-query-format)
 - [IEEE query format](https://github.com/ContentMine/getpapers/wiki/ieee-query-format)
 - [ArXiv query format](https://github.com/ContentMine/getpapers/wiki/arxiv-query-format)
-- [Crossref API](https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md)
+- [Crossref API](https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md) [Crossref docs]
 
 ## License
 
