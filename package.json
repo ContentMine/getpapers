@@ -41,7 +41,6 @@
     "progress": "^1.1.8",
     "request-retry": "^0.1.1",
     "requestretry": "^1.9.0",
-    "restler": "^3.2.2",
     "winston": "~1.0.0",
     "xml2js": "^0.4.17"
   },
