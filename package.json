@@ -42,6 +42,9 @@
     "restler": "^3.2.2",
     "winston": "~1.0.0",
     "sanitize-filename": "^1.6.0" 
+    "requestretry": "^1.12.0",
+    "winston": "~1.0.0",
+    "xml2js": "^0.4.17"
   },
   "bin": {
     "getpapers": "bin/getpapers.js"
