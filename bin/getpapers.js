@@ -41,6 +41,8 @@ program
     'limit the number of hits and downloads')
   .option('--filter <filter object>',
     'filter by key value pair, passed straight to the crossref api only')
+  .option('-r, --restart',
+    'restart file downloads after failure')
   .parse(process.argv)
 
 if (!process.argv.slice(2).length) {
@@ -102,6 +104,7 @@ options.xml = program.xml
 options.pdf = program.pdf
 options.supp = program.supp
 options.minedterms = program.minedterms
+options.restart = program.restart
 options.all = program.all
 options.hitlimit = parseInt(program.limit)
 options.noexecute = program.noexecute
