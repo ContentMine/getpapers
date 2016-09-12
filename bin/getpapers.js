@@ -39,6 +39,8 @@ program
     'save log to specified file in output directory as well as printing to terminal')
   .option('-k, --limit <int>',
     'limit the number of hits and downloads')
+  .option('--filter <filter object>',
+    'filter by key value pair, passed straight to the crossref api only')
   .parse(process.argv)
 
 if (!process.argv.slice(2).length) {
@@ -80,11 +82,15 @@ if (program.hasOwnProperty('logfile')) {
 }
 
 // check arguments
-
-if (!program.query) {
+if (typeof program.query === "undefined" && program.api!=='crossref') {
   log.error('No query given. ' +
     'You must provide the --query argument.')
   process.exit(1)
+}
+
+if (program.filter && program.api!=='crossref') {
+  log.warn('Filter given but not using CrossRef api ' +
+    'so no filter applied.')
 }
 
 log.info('Searching using ' + program.api + ' API')
@@ -99,6 +105,8 @@ options.minedterms = program.minedterms
 options.all = program.all
 options.hitlimit = parseInt(program.limit)
 options.noexecute = program.noexecute
+options.filter = program.filter
+
 if (options.noexecute) {
   log.info('Running in no-execute mode, so nothing will be downloaded')
 } else {
