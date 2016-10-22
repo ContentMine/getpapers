@@ -23,22 +23,22 @@ $ npm install --global getpapers
 Use `getpapers --help` to see the command-line help:
 
 ```
-
-Usage: getpapers [options]
-
-Options:
-
-  -h, --help              output usage information
-  -V, --version           output the version number
-  -q, --query <query>     Search query (required)
-  -o, --outdir <path>     Output directory (required - will be created if not found)
-  --api <name>            API to search [arxiv, eupmc, ieee] (default: eupmc)
-  -x, --xml               Download fulltext XMLs if available
-  -p, --pdf               Download fulltext PDFs if available
-  -s, --supp              Download supplementary files if available
-  -l, --loglevel <level>  amount of information to log (silent, verbose, info*, data, warn, error, or debug)
-  -a, --all               search all papers, not just open access
-
+    -h, --help                output usage information
+    -V, --version             output the version number
+    -q, --query <query>       search query (required)
+    -o, --outdir <path>       output directory (required - will be created if not found)
+    --api <name>              API to search [eupmc, crossref, ieee, arxiv] (default: eupmc)
+    -x, --xml                 download fulltext XMLs if available
+    -p, --pdf                 download fulltext PDFs if available
+    -s, --supp                download supplementary files if available
+    -t, --minedterms          download text-mined terms if available
+    -l, --loglevel <level>    amount of information to log (silent, verbose, info*, data, warn, error, or debug)
+    -a, --all                 search all papers, not just open access
+    -n, --noexecute           report how many results match the query, but don't actually download anything
+    -f, --logfile <filename>  save log to specified file in output directory as well as printing to terminal
+    -k, --limit <int>         limit the number of hits and downloads
+    --filter <filter object>  filter by key value pair, passed straight to the crossref api only
+    -r, --restart             restart file downloads after failure
 ```
 
 By default, getpapers uses the EuropePMC API.
