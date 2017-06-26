@@ -2,11 +2,10 @@
 /* global log */
 var program = require('commander')
 var fs = require('fs')
-var winston = require('winston')
+var log = require('winston')
 var api = require('../lib/api.js')
 var loglevels = require('../lib/loglevels.js')
 var mkdirp = require('mkdirp')
-
 var pjson = require('../package.json')
 
 program
@@ -57,26 +56,23 @@ if (!program.api) {
 
 var allowedlevels = Object.keys(loglevels.levels)
 if (allowedlevels.indexOf(program.loglevel) === -1) {
-  winston.error('Loglevel must be one of: ',
+  log.error('Loglevel must be one of: ',
     'quiet, verbose, data, info, warn, error, debug')
   process.exit(1)
 }
 
-log = new (winston.Logger)({
-  transports: [new winston.transports.Console({
-    level: program.loglevel,
-    levels: loglevels.levels,
-    colorize: true
-  })],
+log.addColors(loglevels.colors)
+log.remove(log.transports.Console) //reset logger to nothing
+
+log.add(log.transports.Console, {
   level: program.loglevel,
   levels: loglevels.levels,
   colorize: true
 })
-winston.addColors(loglevels.colors)
 
 if (program.hasOwnProperty('logfile')) {
-  logstream = fs.createWriteStream(program.logfile.toString())
-  log.add(winston.transports.File, {
+  var logstream = fs.createWriteStream(program.logfile.toString())
+  log.add(log.transports.File, {
     stream: logstream,
     level: 'debug'
   })

@@ -43,7 +43,7 @@
     "restler": "^3.2.2",
     "sanitize-filename": "^1.6.0",
     "version_compare": "0.0.3",
-    "winston": "~1.0.0",
+    "winston": "~2.3.1",
     "xml2js": "^0.4.17"
   },
   "bin": {
