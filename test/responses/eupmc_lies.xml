@@ -1,0 +1,126 @@
+<responseWrapper>
+<version>5.2.1</version>
+<hitCount>2</hitCount>
+<nextCursorMark>AoIIP+g5rygzNjgxNDM1Mw==</nextCursorMark>
+<request>
+<query>FIRST_PDATE:2017-05-22 OPEN_ACCESS:y</query>
+<resultType>core</resultType>
+<synonym>false</synonym>
+<cursorMark>*</cursorMark>
+<pageSize>1000</pageSize>
+<sort/>
+</request>
+<resultList>
+<result>
+<id>28616450</id>
+<source>MED</source>
+<pmid>28616450</pmid>
+<pmcid>PMC5458065</pmcid>
+<doi>10.1016/j.dib.2017.05.031</doi>
+<title>
+Climate, weather, socio-economic and electricity usage data for the residential and commercial sectors in FL, U.S.
+</title>
+<authorString>Mukhopadhyay S, Nateghi R.</authorString>
+<authorList>
+<author>
+<fullName>Mukhopadhyay S</fullName>
+<firstName>Sayanti</firstName>
+<lastName>Mukhopadhyay</lastName>
+<initials>S</initials>
+<affiliation>
+Lyles School of Civil Engineering, Purdue University, West Lafayette, IN 47907, USA.
+</affiliation>
+</author>
+<author>
+<fullName>Nateghi R</fullName>
+<firstName>Roshanak</firstName>
+<lastName>Nateghi</lastName>
+<initials>R</initials>
+<affiliation>
+School of Industrial Engineering, Division of Environmental and Ecological Engineering, Purdue University, West Lafayette, IN 47907, USA.
+</affiliation>
+</author>
+</authorList>
+<journalInfo>
+<volume>13</volume>
+<journalIssueId>2561530</journalIssueId>
+<dateOfPublication>2017 Aug</dateOfPublication>
+<monthOfPublication>8</monthOfPublication>
+<yearOfPublication>2017</yearOfPublication>
+<printPublicationDate>2017-08-01</printPublicationDate>
+<journal>
+<title>Data in Brief</title>
+<ISOAbbreviation>Data Brief</ISOAbbreviation>
+<medlineAbbreviation>Data Brief</medlineAbbreviation>
+<NLMid>101654995</NLMid>
+<ESSN>2352-3409</ESSN>
+</journal>
+</journalInfo>
+<pubYear>2017</pubYear>
+<pageInfo>192-195</pageInfo>
+<abstractText>
+This paper presents the data that is used in the article entitled "Climate sensitivity of end-use electricity consumption in the built environment: An application to the state of Florida, United States" (Mukhopadhyay and Nateghi, 2017) [1]. The data described in this paper pertains to the state of Florida (during the period of January 1990 to November 2015). It can be classified into four categories of (i) state-level electricity consumption data; (ii) climate data; (iii) weather data; and (iv) socio-economic data. While, electricity consumption data and climate data are obtained at monthly scale directly from the source, the weather data was initially obtained at daily-level, and then aggregated to monthly level for the purpose of analysis. The time scale of socio-economic data varies from monthly-level to yearly-level. This dataset can be used to analyze the influence of climate and weather on the electricity demand as described in Mukhopadhyay and Nateghi (2017) [1].
+</abstractText>
+<affiliation>
+Lyles School of Civil Engineering, Purdue University, West Lafayette, IN 47907, USA.
+</affiliation>
+<language>eng</language>
+<pubModel>Electronic-eCollection</pubModel>
+<pubTypeList>
+<pubType>other</pubType>
+<pubType>Journal Article</pubType>
+</pubTypeList>
+<keywordList>
+<keyword>Electricity Consumption</keyword>
+<keyword>Climate-energy Nexus</keyword>
+<keyword>Predictive Energy Analytics</keyword>
+<keyword>Residential And Commercial Electricity Sectors</keyword>
+</keywordList>
+<fullTextUrlList>
+<fullTextUrl>
+<availability>Open access</availability>
+<availabilityCode>OA</availabilityCode>
+<documentStyle>pdf</documentStyle>
+<site>Europe_PMC</site>
+<url>
+http://europepmc.org/articles/PMC5458065?pdf=render
+</url>
+</fullTextUrl>
+<fullTextUrl>
+<availability>Open access</availability>
+<availabilityCode>OA</availabilityCode>
+<documentStyle>html</documentStyle>
+<site>Europe_PMC</site>
+<url>http://europepmc.org/articles/PMC5458065</url>
+</fullTextUrl>
+<fullTextUrl>
+<availability>Subscription required</availability>
+<availabilityCode>S</availabilityCode>
+<documentStyle>doi</documentStyle>
+<site>DOI</site>
+<url>https://doi.org/10.1016/j.dib.2017.05.031</url>
+</fullTextUrl>
+</fullTextUrlList>
+<isOpenAccess>Y</isOpenAccess>
+<inEPMC>Y</inEPMC>
+<inPMC>N</inPMC>
+<hasPDF>Y</hasPDF>
+<hasBook>N</hasBook>
+<hasSuppl>N</hasSuppl>
+<citedByCount>0</citedByCount>
+<hasReferences>N</hasReferences>
+<hasTextMinedTerms>N</hasTextMinedTerms>
+<hasDbCrossReferences>N</hasDbCrossReferences>
+<hasLabsLinks>N</hasLabsLinks>
+<license>cc by</license>
+<authMan>N</authMan>
+<epmcAuthMan>N</epmcAuthMan>
+<nihAuthMan>N</nihAuthMan>
+<hasTMAccessionNumbers>N</hasTMAccessionNumbers>
+<dateOfCreation>2017-06-15</dateOfCreation>
+<dateOfRevision>2017-06-15</dateOfRevision>
+<electronicPublicationDate>2017-05-22</electronicPublicationDate>
+<firstPublicationDate>2017-05-22</firstPublicationDate>
+</result>
+</resultList>
+</responseWrapper>
