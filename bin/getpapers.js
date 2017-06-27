@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* global log */
 var program = require('commander')
 var fs = require('fs')
 var log = require('winston')
@@ -62,7 +61,7 @@ if (allowedlevels.indexOf(program.loglevel) === -1) {
 }
 
 log.addColors(loglevels.colors)
-log.remove(log.transports.Console) //reset logger to nothing
+log.remove(log.transports.Console) // reset logger to nothing
 
 log.add(log.transports.Console, {
   level: program.loglevel,
@@ -80,13 +79,13 @@ if (program.hasOwnProperty('logfile')) {
 }
 
 // check arguments
-if (typeof program.query === "undefined" && program.api!=='crossref') {
+if (typeof program.query === 'undefined' && program.api !== 'crossref') {
   log.error('No query given. ' +
     'You must provide the --query argument.')
   process.exit(1)
 }
 
-if (program.filter && program.api!=='crossref') {
+if (program.filter && program.api !== 'crossref') {
   log.warn('Filter given but not using CrossRef api ' +
     'so no filter applied.')
 }
@@ -118,6 +117,6 @@ if (options.noexecute) {
   process.chdir(program.outdir)
 }
 
-var chosenapi = api(program.api)
-var searchapi = new chosenapi(options)
+var Chosenapi = api(program.api)
+var searchapi = new Chosenapi(options)
 searchapi.search(program.query)
