@@ -1,0 +1,14 @@
+<responseWrapper>
+<version>5.2.1</version>
+<hitCount>0</hitCount>
+<nextCursorMark>*</nextCursorMark>
+<request>
+<query>FIRST_PDATE:2018-03-19 OPEN_ACCESS:y</query>
+<resultType>core</resultType>
+<synonym>false</synonym>
+<cursorMark>*</cursorMark>
+<pageSize>1000</pageSize>
+<sort/>
+</request>
+<resultList/>
+</responseWrapper>
