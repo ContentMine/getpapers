@@ -14,6 +14,12 @@ getpapers can fetch article metadata, fulltexts (PDF or XML), and supplementary 
 
 ## Installation
 
+### Installing nodeJS
+
+Please follow [these cross-platform instructions](https://github.com/blahah/installing-node-tools)
+
+### Installing getpapers
+
 ```bash
 $ npm install --global getpapers
 ```
