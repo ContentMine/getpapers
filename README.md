@@ -66,3 +66,8 @@ Each API has its own query format. Usage guides are provided on our wiki:
 
 Copyright (c) 2014 Shuttleworth Foundation
 Licensed under the MIT license
+
+## Caveats
+
+ * The remote site may timeout or hang (we have found that if EPMC gets a query with no results it will timeout).
+ * Be careful not to download the whole site. use the `-k` option to limit downloads (this should be a default).
